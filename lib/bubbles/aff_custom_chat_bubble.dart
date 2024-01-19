@@ -69,7 +69,7 @@ class AffCustomChatBubble extends StatelessWidget {
     return Align(
       alignment: isSender ? Alignment.topRight : Alignment.topLeft,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 2),
         child: CustomPaint(
           painter: SpecialAffChatBubble(
               color: color,

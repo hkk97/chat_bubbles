@@ -269,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         isLoading = true;
       });
-      await audioPlayer.play(url);
+      await audioPlayer.play(UrlSource(url));
       setState(() {
         isPlaying = true;
       });
@@ -281,12 +281,12 @@ class _MyHomePageState extends State<MyHomePage> {
         isLoading = false;
       });
     });
-    audioPlayer.onAudioPositionChanged.listen((Duration p) {
+    audioPlayer.onPositionChanged.listen((Duration p) {
       setState(() {
         position = p;
       });
     });
-    audioPlayer.onPlayerCompletion.listen((event) {
+    audioPlayer.onPlayerComplete.listen((event) {
       setState(() {
         isPlaying = false;
         duration = new Duration();
